@@ -1,5 +1,5 @@
 --[[
-                      ████                 █████
+-- PORTED BY MARSTRAVELER, WITH LOVE ❤️
                   ████████████          ███████████
                 ███████      ██        ███    ██████
                █████                             ████
@@ -52,13 +52,10 @@ local ErrorMessageOut
 ErrorMessageOut = game:GetService("LogService").MessageOut:Connect(function(Message, Type)
 
     if Type == Enum.MessageType.MessageError and not string.find(Message, "attempt to index nil with 'Value'") then
-        ErrorMessageOut:Disconnect()
-
-        setclipboard("Executor: " .. identifyexecutor() .. "\n\n" .. tostring(Message))
-        Library:Notify(" Lolhax has errored while loading and will now unload. The error has been copied to your clipboard, please report this on the LX discord server! ", 4.5)
+        Library:Notify(" bro tried to uninject ", 4.5)
 
         task.delay(5, function()
-            Library:Unload()
+            print("no unloading bro")
         end)
     end
 
@@ -67,7 +64,7 @@ local LocalPlayer = game.Players.LocalPlayer
 
 -- UI vvv
 
-local Window = Library:CreateWindow({ Title = " LOLHAX ┃ ".. LocalPlayer.Name, Center = true, AutoShow = true, TabPadding = 3, MenuFadeTime = 0.15 })
+local Window = Library:CreateWindow({ Title = " LX-PORT┃ ".. LocalPlayer.Name, Center = true, AutoShow = true, TabPadding = 3, MenuFadeTime = 0.15 })
 local Tabs = { General = Window:AddTab("General"), Exploit = Window:AddTab("Exploits"), ESP = Window:AddTab("ESP"), Visuals = Window:AddTab("Visuals"), Misc = Window:AddTab("Miscellaneous"), Config = Window:AddTab("Config") }
 
 local GeneralAutomation = Tabs.General:AddLeftGroupbox("Automation")
